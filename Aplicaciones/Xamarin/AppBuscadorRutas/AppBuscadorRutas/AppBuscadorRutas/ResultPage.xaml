@@ -9,6 +9,10 @@
                 FontSize="18"
                 TextColor="Black"
                 VerticalTextAlignment="Center"/>
+            <Button Text="Atras"
+                    HorizontalOptions="EndAndExpand"
+                    VerticalOptions="CenterAndExpand"
+                    Clicked="Atras_Button_Clicked"/>
         </AbsoluteLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
