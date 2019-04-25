@@ -4,12 +4,11 @@
              xmlns:local="clr-namespace:AppBuscadorRutas"
              x:Class="AppBuscadorRutas.MainPage">
     <NavigationPage.TitleView>
-        <AbsoluteLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" BackgroundColor="Black">
+        <AbsoluteLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
             <Label
                 Text="Buscador de rutas"
                 FontSize="18"
-                TextColor="White"
-                BackgroundColor="Black"
+                TextColor="Black"
                 VerticalTextAlignment="Center"/>
         </AbsoluteLayout>
     </NavigationPage.TitleView>

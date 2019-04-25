@@ -7,7 +7,7 @@
             <Label
                 Text="Buscador de rutas"
                 FontSize="18"
-                TextColor="White"
+                TextColor="Black"
                 VerticalTextAlignment="Center"/>
         </AbsoluteLayout>
     </NavigationPage.TitleView>
