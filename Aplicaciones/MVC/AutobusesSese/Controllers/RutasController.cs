@@ -13,7 +13,7 @@ namespace AutobusesSese.Controllers
 {
     public class RutasController : Controller
     {
-        private AutobusesSeseEntities1 db = new AutobusesSeseEntities1();
+        private AutobusesSeseEntities db = new AutobusesSeseEntities();
 
         // GET: Rutas
         public async Task<ActionResult> Index()

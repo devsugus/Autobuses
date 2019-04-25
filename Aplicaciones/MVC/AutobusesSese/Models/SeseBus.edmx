@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="AutobusesSeseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="AutobusesSeseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Ciudades">
           <Key>
             <PropertyRef Name="Id" />
@@ -110,7 +110,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AutobusesSeseEntities1" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="AutobusesSeseEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Ciudades" EntityType="Self.Ciudades" />
           <EntitySet Name="Rutas" EntityType="Self.Rutas" />
           <AssociationSet Name="FK_Rutas_Ciudades" Association="Self.FK_Rutas_Ciudades">
@@ -127,7 +127,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AutobusesSeseModelStoreContainer" CdmEntityContainer="AutobusesSeseEntities1">
+        <EntityContainerMapping StorageEntityContainer="AutobusesSeseModelStoreContainer" CdmEntityContainer="AutobusesSeseEntities">
           <EntitySetMapping Name="Ciudades">
             <EntityTypeMapping TypeName="AutobusesSeseModel.Ciudades">
               <MappingFragment StoreEntitySet="Ciudades">
