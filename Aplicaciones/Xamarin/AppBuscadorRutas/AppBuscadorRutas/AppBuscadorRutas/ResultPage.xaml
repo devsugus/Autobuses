@@ -3,17 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBuscadorRutas.ResultPage">
     <NavigationPage.TitleView>
-        <AbsoluteLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <StackLayout Orientation="Horizontal" 
+                     Spacing="0" 
+                     Padding="0"
+                     BackgroundColor="DarkBlue">
+            <Image Source="sese.jpg" 
+                   Aspect="AspectFill"
+                   VerticalOptions="Start" 
+                   HorizontalOptions="Start"/>
             <Label
                 Text="Buscador de rutas"
-                FontSize="18"
-                TextColor="Black"
-                VerticalTextAlignment="Center"/>
-            <Button Text="Atras"
-                    HorizontalOptions="EndAndExpand"
-                    VerticalOptions="CenterAndExpand"
-                    Clicked="Atras_Button_Clicked"/>
-        </AbsoluteLayout>
+                FontSize="Large"
+                TextColor="White"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+        </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>

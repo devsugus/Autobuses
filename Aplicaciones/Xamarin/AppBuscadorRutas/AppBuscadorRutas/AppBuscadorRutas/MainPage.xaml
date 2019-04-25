@@ -4,13 +4,21 @@
              xmlns:local="clr-namespace:AppBuscadorRutas"
              x:Class="AppBuscadorRutas.MainPage">
     <NavigationPage.TitleView>
-        <AbsoluteLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+        <StackLayout Orientation="Horizontal" 
+                     Spacing="0" 
+                     Padding="0"
+                     BackgroundColor="DarkBlue">
+            <Image Source="sese.jpg" 
+                   Aspect="AspectFill"
+                   VerticalOptions="Start" 
+                   HorizontalOptions="Start"/>
             <Label
                 Text="Buscador de rutas"
-                FontSize="18"
-                TextColor="Black"
-                VerticalTextAlignment="Center"/>
-        </AbsoluteLayout>
+                FontSize="Large"
+                TextColor="White"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"/>
+        </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
