@@ -134,26 +134,26 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AutobusesSese.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AutobusesSese.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AutobusesSese.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AutobusesSese.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\AutobusesSese.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AutobusesSese.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Models\Ciudades.cs">
-      <DependentUpon>AutobusesSese.tt</DependentUpon>
+      <DependentUpon>SeseBus.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Rutas.cs">
-      <DependentUpon>AutobusesSese.tt</DependentUpon>
+      <DependentUpon>SeseBus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SeseBus.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SeseBus.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SeseBus.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SeseBus.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\SeseBus.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SeseBus.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -170,24 +170,24 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\AutobusesSese.Context.tt">
+    <Content Include="Models\SeseBus.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AutobusesSese.edmx</DependentUpon>
-      <LastGenOutput>AutobusesSese.Context.cs</LastGenOutput>
+      <DependentUpon>SeseBus.edmx</DependentUpon>
+      <LastGenOutput>SeseBus.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\AutobusesSese.tt">
+    <Content Include="Models\SeseBus.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AutobusesSese.edmx</DependentUpon>
-      <LastGenOutput>AutobusesSese.cs</LastGenOutput>
+      <DependentUpon>SeseBus.edmx</DependentUpon>
+      <LastGenOutput>SeseBus.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\AutobusesSese.edmx">
+    <EntityDeploy Include="Models\SeseBus.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AutobusesSese.Designer.cs</LastGenOutput>
+      <LastGenOutput>SeseBus.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\AutobusesSese.edmx.diagram">
-      <DependentUpon>AutobusesSese.edmx</DependentUpon>
+    <Content Include="Models\SeseBus.edmx.diagram">
+      <DependentUpon>SeseBus.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
