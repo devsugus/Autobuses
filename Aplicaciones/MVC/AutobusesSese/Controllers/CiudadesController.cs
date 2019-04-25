@@ -11,7 +11,7 @@ using AutobusesSese.Models;
 
 namespace AutobusesSese.Controllers
 {
-    public class CiudadesController : BaseController
+    public class CiudadesController : Controller
     {
         private AutobusesSeseEntities db = new AutobusesSeseEntities();
 
@@ -116,13 +116,13 @@ namespace AutobusesSese.Controllers
             return RedirectToAction("Index");
         }
 
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
     }
 }
