@@ -2,7 +2,7 @@
 Proyecto final curso
 
 ## Por hacer:
-- [ ] BBDD
+
 - [ ] MVC
 	- [ ] Fake repository
 - [ ] Algoritmica
@@ -11,13 +11,14 @@ Proyecto final curso
 - [ ] ODATA
 	- [ ] Libreria
 - [ ] Windows Forms (esqueleto)
-	- [ ] Implementación
+	- [ ] ImplementaciÃ³n
 - [ ] HTML (esqueleto)
-	- [ ] Implementación
+	- [ ] ImplementaciÃ³n
 - [ ] XAMARIN (esqueleto)
-	- [ ] Implementación
+	- [ ] ImplementaciÃ³n
 - [ ] Estilos
 
 
 # Hecho
 - [x] Repositorio
+- [x] BBDD
