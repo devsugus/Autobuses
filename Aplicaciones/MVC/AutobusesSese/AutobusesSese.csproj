@@ -128,6 +128,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CiudadesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RutasController.cs" />
@@ -152,6 +153,8 @@
     <Compile Include="Models\Ciudades.cs">
       <DependentUpon>AutobusesSese.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Metadatas\MetadatasCiudades.cs" />
+    <Compile Include="Models\Metadatas\MetadatasRutas.cs" />
     <Compile Include="Models\Rutas.cs">
       <DependentUpon>AutobusesSese.tt</DependentUpon>
     </Compile>
@@ -225,7 +228,9 @@
     <Content Include="Views\Rutas\Edit.cshtml" />
     <Content Include="Views\Rutas\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\Base\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

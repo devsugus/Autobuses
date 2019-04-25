@@ -11,7 +11,7 @@ using AutobusesSese.Models;
 
 namespace AutobusesSese.Controllers
 {
-    public class RutasController : Controller
+    public class RutasController : BaseController
     {
         private AutobusesSeseEntities1 db = new AutobusesSeseEntities1();
 
