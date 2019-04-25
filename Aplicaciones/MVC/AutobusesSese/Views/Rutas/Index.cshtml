@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Inicio</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nueva Ruta", "Create")
 </p>
 <table class="table">
     <tr>
@@ -21,10 +21,12 @@
             @Html.DisplayNameFor(model => model.Precio)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ciudades.NombreCiudad)
+            @*@Html.DisplayNameFor(model => model.Ciudades.NombreCiudad)*@
+            <label>Ciudad de Origen</label>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ciudades1.NombreCiudad)
+            @*@Html.DisplayNameFor(model => model.Ciudades1.NombreCiudad)*@
+            <label>Ciudad de Destino</label>
         </th>
         <th></th>
     </tr>
@@ -47,9 +49,9 @@
             @Html.DisplayFor(modelItem => item.Ciudades1.NombreCiudad)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Editar", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Detalles", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.Id })
         </td>
     </tr>
 }
