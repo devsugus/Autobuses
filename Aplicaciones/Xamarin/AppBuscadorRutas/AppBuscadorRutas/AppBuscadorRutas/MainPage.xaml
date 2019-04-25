@@ -4,11 +4,17 @@
              xmlns:local="clr-namespace:AppBuscadorRutas"
              x:Class="AppBuscadorRutas.MainPage">
 
-    <StackLayout>
-        <!-- Place new controls here -->
+    <!--<StackLayout>
+        --><!-- Place new controls here --><!--
         <Label Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+    </StackLayout>-->
 
+    <NavigationPage.TitleView>
+        <StackLayout Orientation="Horizontal" VerticalOptions="Start" Spacing="10">
+            <Image Source="icon.png" Aspect="AspectFit" ></Image>
+            <Label Text="TitleView" FontSize="18" TextColor="Blue" VerticalTextAlignment="Center" />
+        </StackLayout>
+     </NavigationPage.TitleView>
 </ContentPage>

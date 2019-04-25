@@ -9,6 +9,8 @@ namespace AppBuscadorRutas
 {
     public partial class MainPage : ContentPage
     {
+        ListView listView;
+        string[] names = { "Madrid","Zaragoza","Barcelona" };  
         public MainPage()
         {
             InitializeComponent();
