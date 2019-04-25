@@ -4,9 +4,9 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Estas seguro que deseas eliminar esta ruta?</h3>
 <div>
     <h4>Rutas</h4>
     <hr />
@@ -36,7 +36,8 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Ciudades.NombreCiudad)
+            @*@Html.DisplayNameFor(model => model.Ciudades.NombreCiudad)*@
+            <label>Ciudad Origen</label>
         </dt>
 
         <dd>
@@ -48,7 +49,8 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Ciudades1.NombreCiudad)
+           @* @Html.DisplayFor(model => model.Ciudades1.NombreCiudad)*@
+            <label>Ciudad Destino</label>
         </dd>
 
     </dl>
@@ -57,8 +59,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-default" /> |
+            @Html.ActionLink("Volver a la lista", "Index")
         </div>
     }
 </div>
