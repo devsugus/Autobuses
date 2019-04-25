@@ -138,8 +138,8 @@
     <Compile Include="Models\Ciudades.cs">
       <DependentUpon>SeseBus.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Metadatas\MetadatasCiudades.cs" />
-    <Compile Include="Models\Metadatas\MetadatasRutas.cs" />
+    <Compile Include="Models\MetadataCiudadades.cs" />
+    <Compile Include="Models\MetadatasRutas.cs" />
     <Compile Include="Models\Rutas.cs">
       <DependentUpon>SeseBus.tt</DependentUpon>
     </Compile>
