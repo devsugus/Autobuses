@@ -3,25 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AppBuscadorRutas"
              x:Class="AppBuscadorRutas.MainPage">
-    <NavigationPage.TitleView>
-        <AbsoluteLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-            <Label
-                Text="Buscador de rutas"
-                FontSize="18"
-                TextColor="Black"
-                VerticalTextAlignment="Center"/>
-        </AbsoluteLayout>
-    </NavigationPage.TitleView>
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Bienvenido al Buscador de rutas de Grupo Sesé" 
+
+    <StackLayout>
+        <!-- Place new controls here -->
+        <Label Text="Welcome to Xamarin.Forms!" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
-            <Button Text="Buscar rutas" 
-                HorizontalOptions="CenterAndExpand" 
-                VerticalOptions="CenterAndExpand"
-                Clicked="Button_Clicked"/>
-        </StackLayout>
+    </StackLayout>
 
-    </ContentPage.Content>
 </ContentPage>
