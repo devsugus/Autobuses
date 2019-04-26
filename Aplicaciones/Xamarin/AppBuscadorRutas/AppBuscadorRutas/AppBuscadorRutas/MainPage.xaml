@@ -3,41 +3,167 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AppBuscadorRutas"
              x:Class="AppBuscadorRutas.MainPage">
+    <ContentPage.Resources>
+        <!--Estilos-->
+        <StyleSheet>
+            <![CDATA[
+            
+            #Cabecera {
+                background-color: #2c5aa0;
+            }
+            
+            #Titulo {
+                font-size: large;
+                color: white;
+                margin-left: 20;
+            }
+            
+            Picker {
+                width:200;
+            }
+            
+            Button {
+                border-radius:6;
+                background-color: #2c5aa0;
+                color: white;
+                font-size: medium;
+            }
+            
+            
+            ]]>
+        </StyleSheet>
+
+        <!--Font Awesome-->
+        <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
+                <On Platform="iOS" Value="FontAwesome5Brands-Regular" />
+                <On Platform="Android" Value="FontAwesome5Brands-Regular" />
+                <On Platform="UWP" Value="/Assets/FontAwesome#Font Awesome 5 Free-Solid-900" />
+            </OnPlatform>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <!--Cabecera-->
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
+        <StackLayout Orientation="Horizontal" StyleId="Cabecera">
             <Image Source="logo.png" 
                    Aspect="AspectFill"
                    VerticalOptions="Start" 
                    HorizontalOptions="Start"/>
-            <Label
-                Text="Autobuses Sese"
-                FontSize="Large"
-                TextColor="Black"
+            <Label StyleId="Titulo"
+                Text="Autobuses Sesé"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"/>
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
+            <!--Título-->
             <Label Text="Buscador de rutas"
                    FontSize="Medium"
                    TextColor="Black"
                    VerticalOptions="Center"
-                   HorizontalOptions="Center"/>
+                   HorizontalOptions="Center">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                        <On Platform="Android" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                        <On Platform="UWP" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+            
+            <!--Ciudad de Origen-->
             <Label Text="Ciudad de origen"
-           HorizontalOptions="CenterAndExpand"/>
+           HorizontalOptions="CenterAndExpand">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                        <On Platform="Android" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                        <On Platform="UWP" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
             <Picker
-               HorizontalOptions="CenterAndExpand"
-           />
-            <Label Text="Ciudad de destino" 
-           HorizontalOptions="CenterAndExpand"/>
+               HorizontalOptions="CenterAndExpand">
+                <Picker.Title>
+                    <OnPlatform>
+                        <On Platform="iOS" Value="Ciudad de Origen" />
+                        <On Platform="Android" Value="Ciudad de Origen" />
+                    </OnPlatform>
+                </Picker.Title>
+                <Picker.Items>
+                    <!--Aragon-->
+                    <x:String>Huesca</x:String>
+                    <x:String>Teruel</x:String>
+                    <x:String>Zaragoza</x:String>
+                    <!--Cataluña-->
+                    <x:String>Barcelona</x:String>
+                    <x:String>Girona</x:String>
+                    <x:String>Lleida</x:String>
+                    <x:String>Tarragona</x:String>
+                </Picker.Items>
+            </Picker>
+            
+            <Label Text=">>>"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                        <On Platform="Android" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                        <On Platform="UWP" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
+
+            <!--Ciudad de Origen-->
+            <Label Text="Ciudad de Destino" 
+           HorizontalOptions="CenterAndExpand">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                        <On Platform="Android" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                        <On Platform="UWP" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
             <Picker
-               HorizontalOptions="CenterAndExpand" 
-           />
-            <Button Text="Buscar rutas" 
-                HorizontalOptions="CenterAndExpand" 
-                VerticalOptions="CenterAndExpand"
-                Clicked="Button_Clicked"/>
+               HorizontalOptions="CenterAndExpand">
+                <Picker.Title>
+                    <OnPlatform>
+                        <On Platform="iOS" Value="Ciudad de Origen" />
+                        <On Platform="Android" Value="Ciudad de Origen" />
+                    </OnPlatform>
+                </Picker.Title>
+                <Picker.Items>
+                    <!--Aragon-->
+                    <x:String>Huesca</x:String>
+                    <x:String>Teruel</x:String>
+                    <x:String>Zaragoza</x:String>
+                    <!--Cataluña-->
+                    <x:String>Barcelona</x:String>
+                    <x:String>Girona</x:String>
+                    <x:String>Lleida</x:String>
+                    <x:String>Tarragona</x:String>
+                </Picker.Items>
+            </Picker>
+            
+            <!--Botón de Búsqueda-->
+            <Button Text="Buscar &#xf689;" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"
+                Clicked="Button_Clicked"
+                    FontFamily="{StaticResource FontAwesomeBrands}"
+                    >
+                <Button.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="iOS" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                        <On Platform="Android" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                        <On Platform="UWP" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                    </OnPlatform>
+                </Button.FontFamily>
+            </Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
