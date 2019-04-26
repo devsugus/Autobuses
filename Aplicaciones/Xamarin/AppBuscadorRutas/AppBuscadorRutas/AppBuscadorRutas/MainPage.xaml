@@ -22,6 +22,16 @@
             <Label Text="Bienvenido al Buscador de rutas de Grupo Sesé" 
            HorizontalOptions="Center"
            VerticalOptions="CenterAndExpand" />
+            <Label Text="Ciudad de origen"
+           HorizontalOptions="CenterAndExpand"/>
+            <Picker
+               HorizontalOptions="CenterAndExpand"
+           />
+            <Label Text="Ciudad de destino" 
+           HorizontalOptions="CenterAndExpand"/>
+            <Picker
+               HorizontalOptions="CenterAndExpand" 
+           />
             <Button Text="Buscar rutas" 
                 HorizontalOptions="CenterAndExpand" 
                 VerticalOptions="CenterAndExpand"

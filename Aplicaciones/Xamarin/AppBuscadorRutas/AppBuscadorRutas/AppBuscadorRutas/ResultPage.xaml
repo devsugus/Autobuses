@@ -4,7 +4,7 @@
              x:Class="AppBuscadorRutas.ResultPage">
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
-            <Image Source="logo.jpg" 
+            <Image Source="logo.png" 
                    Aspect="AspectFill"
                    VerticalOptions="Start" 
                    HorizontalOptions="Start"/>
