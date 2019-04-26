@@ -9,7 +9,7 @@
                    VerticalOptions="Start" 
                    HorizontalOptions="Start"/>
             <Label
-                Text="Buscador de rutas"
+                Text="Resultados de rutas"
                 FontSize="Large"
                 TextColor="Black"
                 VerticalOptions="Center"
