@@ -62,6 +62,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Fonts\FontAwesome.otf" />
+    <Content Include="Assets\Fonts\Raleway-SemiBold.svg" />
+    <None Include="Assets\Fonts\Raleway-SemiBold.eot" />
+    <Content Include="Assets\Fonts\Raleway-SemiBold.ttf" />
+    <None Include="Assets\Fonts\Raleway-SemiBold.woff" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
