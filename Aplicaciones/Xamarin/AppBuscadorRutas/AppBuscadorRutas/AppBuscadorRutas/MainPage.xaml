@@ -24,7 +24,12 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Ciudad de Origen"
+            <Label Text="Buscador de rutas"
+                   FontSize="Medium"
+                   TextColor="Black"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+            <Label Text="Ciudad de origen"
            HorizontalOptions="CenterAndExpand"/>
             <Picker
                HorizontalOptions="CenterAndExpand"
