@@ -1,10 +1,17 @@
 ﻿@model IEnumerable<AutobusesSese.Models.Ciudades>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Ciudades";
 }
-
-<h2>Inicio</h2>
+<style>
+    th {
+        background-color: #2c5aa0;
+        font-size: 1.2em;
+        color: white;
+        text-shadow: black 1px 1px 1px;
+    }
+</style>
+<h2 id="TituloCiudades">Ciudades</h2>
 
 <p>
     @Html.ActionLink("Nueva Ciudad", "Create")
