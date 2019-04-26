@@ -11,10 +11,9 @@ using AutobusesSese.Models;
 
 namespace AutobusesSese.Controllers
 {
-    public class CiudadesController : Controller
+    public class CiudadesController : BaseController
     {
-        private AutobusesSeseEntities db = new AutobusesSeseEntities();
-
+       
         // GET: Ciudades
         public async Task<ActionResult> Index()
         {

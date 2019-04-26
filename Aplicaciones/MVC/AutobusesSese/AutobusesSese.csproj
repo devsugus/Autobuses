@@ -191,6 +191,10 @@
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="fonts\Raleway-SemiBold.eot" />
+    <Content Include="fonts\Raleway-SemiBold.ttf" />
+    <Content Include="fonts\Raleway-SemiBold.woff" />
+    <Content Include="img\desktop.ini" />
     <EntityDeploy Include="Models\SeseBus.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SeseBus.Designer.cs</LastGenOutput>
@@ -198,10 +202,6 @@
     <Content Include="Models\SeseBus.edmx.diagram">
       <DependentUpon>SeseBus.edmx</DependentUpon>
     </Content>
-    <Content Include="fonts\Raleway-SemiBold.eot" />
-    <Content Include="fonts\Raleway-SemiBold.ttf" />
-    <Content Include="fonts\Raleway-SemiBold.woff" />
-    <Content Include="img\desktop.ini" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

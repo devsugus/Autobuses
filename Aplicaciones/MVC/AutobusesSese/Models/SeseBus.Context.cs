@@ -13,10 +13,10 @@ namespace AutobusesSese.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class AutobusesSeseEntities : DbContext
+    public partial class AutobusesSeseEntities1 : DbContext
     {
-        public AutobusesSeseEntities()
-            : base("name=AutobusesSeseEntities")
+        public AutobusesSeseEntities1()
+            : base("name=AutobusesSeseEntities1")
         {
         }
     

@@ -17,9 +17,9 @@ namespace AutobusesSese.Models
         public int Id { get; set; }
         public int Origen { get; set; }
         public int Destino { get; set; }
-        public int Km { get; set; }
+        public double Km { get; set; }
         public System.TimeSpan Tiempo { get; set; }
-        public int Precio { get; set; }
+        public decimal Precio { get; set; }
     
         public virtual Ciudades Ciudades { get; set; }
         public virtual Ciudades Ciudades1 { get; set; }
