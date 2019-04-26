@@ -10,7 +10,7 @@
                    VerticalOptions="Start" 
                    HorizontalOptions="Start"/>
             <Label
-                Text="Buscador de rutas"
+                Text="Autobuses Sese"
                 FontSize="Large"
                 TextColor="Black"
                 VerticalOptions="Center"
