@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AppBuscadorRutas"
              x:Class="AppBuscadorRutas.MainPage">
+
     <NavigationPage.TitleView>
         <AbsoluteLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-            <Label
+            <Label              
                 Text="Buscador de rutas"
                 FontSize="18"
                 TextColor="Black"
@@ -14,9 +15,22 @@
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
+            <Image Source="icon.png" />
             <Label Text="Bienvenido al Buscador de rutas de Grupo Sesé" 
            HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+           VerticalOptions="CenterAndExpand"
+                   />
+            <Label Text="Ciudad de origen" 
+            HorizontalOptions="CenterAndExpand"/>
+            <Picker
+                HorizontalOptions="CenterAndExpand"
+            />
+            <Label Text="Ciudad de destino" 
+            HorizontalOptions="CenterAndExpand"/>
+            <Picker
+                HorizontalOptions="CenterAndExpand" 
+            />
+
             <Button Text="Buscar rutas" 
                 HorizontalOptions="CenterAndExpand" 
                 VerticalOptions="CenterAndExpand"
