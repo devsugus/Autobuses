@@ -171,8 +171,14 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\Raleway-SemiBold.svg" />
+    <Content Include="fonts\styles.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="img\Bus.png" />
+    <Content Include="img\Diseño_App_Ver_1.png" />
+    <Content Include="img\Diseño_App_Ver_2.png" />
+    <Content Include="img\Logo.png" />
     <Content Include="Models\SeseBus.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SeseBus.edmx</DependentUpon>
@@ -192,6 +198,10 @@
     <Content Include="Models\SeseBus.edmx.diagram">
       <DependentUpon>SeseBus.edmx</DependentUpon>
     </Content>
+    <Content Include="fonts\Raleway-SemiBold.eot" />
+    <Content Include="fonts\Raleway-SemiBold.ttf" />
+    <Content Include="fonts\Raleway-SemiBold.woff" />
+    <Content Include="img\desktop.ini" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -203,6 +213,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Styles\style_mvc.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="AutobusesSeseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012.Azure" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Ciudades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NombreCiudad" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rutas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Origen" Type="int" Nullable="false" />
+          <Property Name="Destino" Type="int" Nullable="false" />
+          <Property Name="Km" Type="float" Nullable="false" />
+          <Property Name="Tiempo" Type="time" Precision="3" Nullable="false" />
+          <Property Name="Precio" Type="money" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Rutas_Ciudades">
+          <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="1" />
+          <End Role="Rutas" Type="Self.Rutas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rutas">
+              <PropertyRef Name="Origen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rutas_Ciudades1">
+          <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="1" />
+          <End Role="Rutas" Type="Self.Rutas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rutas">
+              <PropertyRef Name="Destino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AutobusesSeseModelStoreContainer">
+          <EntitySet Name="Ciudades" EntityType="Self.Ciudades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rutas" EntityType="Self.Rutas" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Rutas_Ciudades" Association="Self.FK_Rutas_Ciudades">
+            <End Role="Ciudades" EntitySet="Ciudades" />
+            <End Role="Rutas" EntitySet="Rutas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rutas_Ciudades1" Association="Self.FK_Rutas_Ciudades1">
+            <End Role="Ciudades" EntitySet="Ciudades" />
+            <End Role="Rutas" EntitySet="Rutas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AutobusesSeseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Ciudades">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NombreCiudad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <NavigationProperty Name="Rutas" Relationship="Self.FK_Rutas_Ciudades" FromRole="Ciudades" ToRole="Rutas" />
+          <NavigationProperty Name="Rutas1" Relationship="Self.FK_Rutas_Ciudades1" FromRole="Ciudades" ToRole="Rutas" />
+        </EntityType>
+        <EntityType Name="Rutas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Origen" Type="Int32" Nullable="false" />
+          <Property Name="Destino" Type="Int32" Nullable="false" />
+          <Property Name="Km" Type="Double" Nullable="false" />
+          <Property Name="Tiempo" Type="Time" Nullable="false" Precision="3" />
+          <Property Name="Precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+          <NavigationProperty Name="Ciudades" Relationship="Self.FK_Rutas_Ciudades" FromRole="Rutas" ToRole="Ciudades" />
+          <NavigationProperty Name="Ciudades1" Relationship="Self.FK_Rutas_Ciudades1" FromRole="Rutas" ToRole="Ciudades" />
+        </EntityType>
+        <Association Name="FK_Rutas_Ciudades">
+          <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="1" />
+          <End Role="Rutas" Type="Self.Rutas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rutas">
+              <PropertyRef Name="Origen" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Rutas_Ciudades1">
+          <End Role="Ciudades" Type="Self.Ciudades" Multiplicity="1" />
+          <End Role="Rutas" Type="Self.Rutas" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Ciudades">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Rutas">
+              <PropertyRef Name="Destino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="AutobusesSeseEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Ciudades" EntityType="Self.Ciudades" />
+          <EntitySet Name="Rutas" EntityType="Self.Rutas" />
+          <AssociationSet Name="FK_Rutas_Ciudades" Association="Self.FK_Rutas_Ciudades">
+            <End Role="Ciudades" EntitySet="Ciudades" />
+            <End Role="Rutas" EntitySet="Rutas" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Rutas_Ciudades1" Association="Self.FK_Rutas_Ciudades1">
+            <End Role="Ciudades" EntitySet="Ciudades" />
+            <End Role="Rutas" EntitySet="Rutas" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AutobusesSeseModelStoreContainer" CdmEntityContainer="AutobusesSeseEntities">
+          <EntitySetMapping Name="Ciudades">
+            <EntityTypeMapping TypeName="AutobusesSeseModel.Ciudades">
+              <MappingFragment StoreEntitySet="Ciudades">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="NombreCiudad" ColumnName="NombreCiudad" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rutas">
+            <EntityTypeMapping TypeName="AutobusesSeseModel.Rutas">
+              <MappingFragment StoreEntitySet="Rutas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Origen" ColumnName="Origen" />
+                <ScalarProperty Name="Destino" ColumnName="Destino" />
+                <ScalarProperty Name="Km" ColumnName="Km" />
+                <ScalarProperty Name="Tiempo" ColumnName="Tiempo" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
