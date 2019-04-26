@@ -14,9 +14,9 @@ Partial Public Class Rutas
     Public Property Id As Integer
     Public Property Origen As Integer
     Public Property Destino As Integer
-    Public Property Km As Integer
+    Public Property Km As Double
     Public Property Tiempo As System.TimeSpan
-    Public Property Precio As Integer
+    Public Property Precio As Decimal
 
     Public Overridable Property Ciudades As Ciudades
     Public Overridable Property Ciudades1 As Ciudades

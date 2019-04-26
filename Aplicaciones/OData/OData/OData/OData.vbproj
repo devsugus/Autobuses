@@ -120,8 +120,8 @@
   <ItemGroup>
     <Content Include="SeseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>SeseModel.Context.vb</LastGenOutput>
       <DependentUpon>SeseModel.edmx</DependentUpon>
+      <LastGenOutput>SeseModel.Context.vb</LastGenOutput>
     </Content>
     <Content Include="SeseModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -194,11 +194,11 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
+    <None Include="packages.config" />
     <EntityDeploy Include="SeseModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>SeseModel.Designer.vb</LastGenOutput>
     </EntityDeploy>
-    <None Include="packages.config" />
     <Content Include="SeseModel.edmx.diagram">
       <DependentUpon>SeseModel.edmx</DependentUpon>
     </Content>

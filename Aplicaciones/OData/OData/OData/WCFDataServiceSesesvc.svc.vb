@@ -6,7 +6,7 @@ Imports System.ServiceModel.Web
 
 Public Class WCFDataServiceSesesvc
     ' TODO: replace [[class name]] with your data class name
-    Inherits EntityFrameworkDataService(Of AutobusesSeseEntities)
+    Inherits EntityFrameworkDataService(Of AutobusesSeseEntitie)
 
     ' This method is called only once to initialize service-wide policies.
     Public Shared Sub InitializeService(ByVal config As DataServiceConfiguration)
