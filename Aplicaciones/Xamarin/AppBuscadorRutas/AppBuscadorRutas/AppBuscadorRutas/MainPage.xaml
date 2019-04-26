@@ -3,6 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:AppBuscadorRutas"
              x:Class="AppBuscadorRutas.MainPage">
+    <ContentPage.Resources>
+        <Style>
+            
+        </Style>
+    </ContentPage.Resources>
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal">
             <Image Source="logo.png" 
@@ -10,26 +15,27 @@
                    VerticalOptions="Start" 
                    HorizontalOptions="Start"/>
             <Label
-                Text="Buscador de rutas"
+                Text="Autobuses Sesé"
                 FontSize="Large"
-                TextColor="Black"
+                TextColor="White"
                 VerticalOptions="Center"
                 HorizontalOptions="Center"/>
         </StackLayout>
     </NavigationPage.TitleView>
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Ciudad de origen"
+            <Label Text="Ciudad de Origen"
            HorizontalOptions="CenterAndExpand"/>
             <Picker
                HorizontalOptions="CenterAndExpand"
            />
-            <Label Text="Ciudad de destino" 
+            <Label>>>></Label>
+            <Label Text="Ciudad de Destino" 
            HorizontalOptions="CenterAndExpand"/>
             <Picker
                HorizontalOptions="CenterAndExpand" 
            />
-            <Button Text="Buscar rutas" 
+            <Button Text="Buscar" 
                 HorizontalOptions="CenterAndExpand" 
                 VerticalOptions="CenterAndExpand"
                 Clicked="Button_Clicked"/>
