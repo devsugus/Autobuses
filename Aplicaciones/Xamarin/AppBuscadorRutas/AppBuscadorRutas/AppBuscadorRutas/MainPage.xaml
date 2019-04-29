@@ -11,6 +11,8 @@
             #Cabecera {
                 background-color: #2c5aa0;
                 font-family: 'Raleway', sans-serif;
+            margin-left: -10;
+            
             }
             
             #Titulo {
@@ -42,12 +44,12 @@
     </ContentPage.Resources>
     
     <!--Cabecera-->
+    <NavigationPage.TitleIcon>
+        <FileImageSource File="logo.png"></FileImageSource>
+    </NavigationPage.TitleIcon>
+    
     <NavigationPage.TitleView>
         <StackLayout Orientation="Horizontal" StyleId="Cabecera">
-            <Image Source="logo.png" 
-                   Aspect="AspectFill"
-                   VerticalOptions="Start" 
-                   HorizontalOptions="Start"/>
             <Label StyleId="Titulo"
                 Text="Autobuses Sesé"
                 VerticalOptions="Center"
@@ -60,7 +62,6 @@
             </Label>
         </StackLayout>
     </NavigationPage.TitleView>
-    
     <!--Contenido-->
     <ContentPage.Content>
         <StackLayout>
