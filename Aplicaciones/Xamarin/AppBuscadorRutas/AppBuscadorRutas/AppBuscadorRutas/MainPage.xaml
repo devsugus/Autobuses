@@ -36,8 +36,6 @@
         <!--Font Awesome-->
         <ResourceDictionary>
             <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
-                <On Platform="iOS" Value="FontAwesome5Brands-Regular" />
-                <On Platform="Android" Value="FontAwesome5Brands-Regular" />
                 <On Platform="UWP" Value="/Assets/FontAwesome#Font Awesome 5 Free-Solid-900" />
             </OnPlatform>
         </ResourceDictionary>
@@ -66,8 +64,6 @@
                    HorizontalOptions="Center">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
-                        <On Platform="Android" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
                         <On Platform="UWP" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
                     </OnPlatform>
                 </Label.FontFamily>
@@ -78,8 +74,6 @@
            HorizontalOptions="CenterAndExpand">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
-                        <On Platform="Android" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
                         <On Platform="UWP" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
                     </OnPlatform>
                 </Label.FontFamily>
@@ -88,7 +82,6 @@
                HorizontalOptions="CenterAndExpand">
                 <Picker.Title>
                     <OnPlatform>
-                        <On Platform="iOS" Value="Ciudad de Origen" />
                         <On Platform="Android" Value="Ciudad de Origen" />
                     </OnPlatform>
                 </Picker.Title>
@@ -110,8 +103,6 @@
                    VerticalOptions="Center">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
-                        <On Platform="Android" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
                         <On Platform="UWP" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
                     </OnPlatform>
                 </Label.FontFamily>
@@ -122,20 +113,12 @@
            HorizontalOptions="CenterAndExpand">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
-                        <On Platform="Android" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
                         <On Platform="UWP" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
             <Picker
                HorizontalOptions="CenterAndExpand">
-                <Picker.Title>
-                    <OnPlatform>
-                        <On Platform="iOS" Value="Ciudad de Origen" />
-                        <On Platform="Android" Value="Ciudad de Origen" />
-                    </OnPlatform>
-                </Picker.Title>
                 <Picker.Items>
                     <!--Aragon-->
                     <x:String>Huesca</x:String>
@@ -150,16 +133,13 @@
             </Picker>
             
             <!--Botón de Búsqueda-->
-            <Button Text="Buscar &#xf689;" 
+            <Button Text="Buscar" 
                 HorizontalOptions="Center" 
                 VerticalOptions="Center"
                 Clicked="Button_Clicked"
-                    FontFamily="{StaticResource FontAwesomeBrands}"
                     >
                 <Button.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
-                        <On Platform="iOS" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
-                        <On Platform="Android" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
                         <On Platform="UWP" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
                     </OnPlatform>
                 </Button.FontFamily>
