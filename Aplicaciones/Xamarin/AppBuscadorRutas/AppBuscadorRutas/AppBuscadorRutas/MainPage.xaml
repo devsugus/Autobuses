@@ -29,7 +29,6 @@
                 font-size: medium;
             }
             
-            
             ]]>
         </StyleSheet>
 
@@ -38,7 +37,7 @@
             <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
                 <On Platform="iOS" Value="FontAwesome5Brands-Regular" />
                 <On Platform="Android" Value="FontAwesome5Brands-Regular" />
-                <On Platform="UWP" Value="/Assets/FontAwesome#Font Awesome 5 Free-Solid-900" />
+                <On Platform="UWP" Value="Assets/FontAwesome#Font Awesome 5 Free-Solid-900" />
             </OnPlatform>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -74,7 +73,7 @@
             </Label>
             
             <!--Ciudad de Origen-->
-            <Label Text="Ciudad de origen"
+            <Label Text="Ciudad de Origen"
            HorizontalOptions="CenterAndExpand">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">
