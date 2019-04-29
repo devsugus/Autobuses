@@ -4,8 +4,7 @@ using System.Text;
 
 namespace AppBuscadorRutas.Models
 {
-    class Rutas
+    class Ciudades
     {
-
     }
 }

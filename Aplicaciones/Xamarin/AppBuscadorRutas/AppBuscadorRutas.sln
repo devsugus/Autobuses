@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBuscadorRutas.iOS", "App
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBuscadorRutas.UWP", "AppBuscadorRutas\AppBuscadorRutas.UWP\AppBuscadorRutas.UWP.csproj", "{EFFE808A-94D3-47F0-8ED4-46DBFFD3D616}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppBuscadorRutas", "AppBuscadorRutas\AppBuscadorRutas\AppBuscadorRutas.csproj", "{F14374AC-31DA-41C8-AC9D-FDA289A61AAA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppBuscadorRutas", "AppBuscadorRutas\AppBuscadorRutas\AppBuscadorRutas.csproj", "{F14374AC-31DA-41C8-AC9D-FDA289A61AAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
