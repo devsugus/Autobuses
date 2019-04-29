@@ -13,22 +13,17 @@ namespace AutobusesSese.Controllers
 {
     public class RutasController : BaseController
     {
-
         // GET: Rutas
         public async Task<ActionResult> Index()
         {
-            var rutas = db.Rutas.Include(r => r.Ciudades).Include(r => r.Ciudades1);
-            return View(await rutas.ToListAsync());
+            var rutas = await db.DameRutas();
+            return View(rutas);
         }
 
         // GET: Rutas/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public async Task<ActionResult> Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Rutas rutas = await db.Rutas.FindAsync(id);
+            Rutas rutas = await db.DameRuta(id);
             if (rutas == null)
             {
                 return HttpNotFound();
@@ -39,8 +34,10 @@ namespace AutobusesSese.Controllers
         // GET: Rutas/Create
         public ActionResult Create()
         {
-            ViewBag.Origen = new SelectList(db.Ciudades, "Id", "NombreCiudad");
-            ViewBag.Destino = new SelectList(db.Ciudades, "Id", "NombreCiudad");
+            ViewBag.Origen = db.DameCiudades();
+            ViewBag.Destino = db.DameCiudades();
+            //ViewBag.Origen = new SelectList(db.DameCiudades(), "Id", "NombreCiudad");
+            //ViewBag.Destino = new SelectList(db.DameCiudades(), "Id", "NombreCiudad");
             return View();
         }
 
@@ -53,30 +50,25 @@ namespace AutobusesSese.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Rutas.Add(rutas);
-                await db.SaveChangesAsync();
+                db.CreaRuta(rutas);
                 return RedirectToAction("Index");
             }
+            ViewBag.Origen = await db.DameCiudades();
+            ViewBag.Destino = await db.DameCiudades();
 
-            ViewBag.Origen = new SelectList(db.Ciudades, "Id", "NombreCiudad", rutas.Origen);
-            ViewBag.Destino = new SelectList(db.Ciudades, "Id", "NombreCiudad", rutas.Destino);
             return View(rutas);
         }
 
         // GET: Rutas/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public async Task<ActionResult> Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Rutas rutas = await db.Rutas.FindAsync(id);
+            Rutas rutas = await db.DameRuta(id);
             if (rutas == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Origen = new SelectList(db.Ciudades, "Id", "NombreCiudad", rutas.Origen);
-            ViewBag.Destino = new SelectList(db.Ciudades, "Id", "NombreCiudad", rutas.Destino);
+            ViewBag.Origen = await db.DameCiudades();
+            ViewBag.Destino = await db.DameCiudades();
             return View(rutas);
         }
 
@@ -89,23 +81,18 @@ namespace AutobusesSese.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(rutas).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                db.ActualizaRuta(rutas);
                 return RedirectToAction("Index");
             }
-            ViewBag.Origen = new SelectList(db.Ciudades, "Id", "NombreCiudad", rutas.Origen);
-            ViewBag.Destino = new SelectList(db.Ciudades, "Id", "NombreCiudad", rutas.Destino);
+            ViewBag.Origen = await db.DameCiudades();
+            ViewBag.Destino = await db.DameCiudades();
             return View(rutas);
         }
 
         // GET: Rutas/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public async Task<ActionResult> Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Rutas rutas = await db.Rutas.FindAsync(id);
+            Rutas rutas = await db.DameRuta(id);
             if (rutas == null)
             {
                 return HttpNotFound();
@@ -118,19 +105,11 @@ namespace AutobusesSese.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Rutas rutas = await db.Rutas.FindAsync(id);
-            db.Rutas.Remove(rutas);
-            await db.SaveChangesAsync();
+            Rutas rutas = await db.DameRuta(id);
+            db.BorraRuta(rutas);
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+
     }
 }

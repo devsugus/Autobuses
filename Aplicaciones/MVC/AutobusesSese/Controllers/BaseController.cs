@@ -1,4 +1,6 @@
 ﻿using AutobusesSese.Models;
+using AutobusesSese.Models.repositorios;
+using Autofac;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +11,22 @@ namespace AutobusesSese.Controllers
 {
     public class BaseController : Controller
     {
-        protected AutobusesSeseEntities1 db = new AutobusesSeseEntities1();
+        public static Autofac.IContainer Container { get; set; }
+        public IRepositorio db;
+
+        public BaseController()
+        {
+            var builder = new ContainerBuilder();
+            builder.RegisterType<FakeRepositorio>().As<IRepositorio>();
+            Container = builder.Build();
+
+            using (var ambito = Container.BeginLifetimeScope())
+            {
+                db = ambito.Resolve<IRepositorio>();
+
+            }
+
+        }
 
         protected override void OnException(ExceptionContext filterContext)
         {
@@ -28,13 +45,6 @@ namespace AutobusesSese.Controllers
                 ViewName = "~/Views/Shared/Error.cshtml"
             };
         }
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+     
     }
 }
