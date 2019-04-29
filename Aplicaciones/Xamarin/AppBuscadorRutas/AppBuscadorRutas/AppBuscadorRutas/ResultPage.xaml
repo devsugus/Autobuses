@@ -75,23 +75,7 @@
             VerticalOptions="Center"
             HorizontalOptions="Center" />-->
             </StackLayout>
-            <ListView ItemsSource="{Binding ListViewRutas}"
-                      HasUnevenRows="True"
-                      BackgroundColor="Snow"
-                      SeparatorVisibility="None"
-                      HorizontalOptions="FillAndExpand"
-                      VerticalOptions="FillAndExpand">
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout>
-                                <Label Text="{Binding Origen}"></Label>
-                                <Label Text="{Binding Precio}"></Label>
-                            </StackLayout>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+           
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
