@@ -14,6 +14,7 @@ namespace AppBuscadorRutas
 		public ResultPage ()
 		{
 			InitializeComponent ();
-		}
+            BindingContext = new ListView();
+        }
     }
 }

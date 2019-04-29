@@ -35,12 +35,6 @@
             ]]>
         </StyleSheet>
 
-        <!--Font Awesome-->
-        <ResourceDictionary>
-            <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
-                <On Platform="UWP" Value="Assets/FontAwesome#Font Awesome 5 Free-Solid-900" />
-            </OnPlatform>
-        </ResourceDictionary>
     </ContentPage.Resources>
     
     <!--Cabecera-->
