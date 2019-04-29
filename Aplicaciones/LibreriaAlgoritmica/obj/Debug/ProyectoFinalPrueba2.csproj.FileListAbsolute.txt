@@ -1,0 +1,7 @@
+C:\Users\marcosandres.blesa\Google Drive\Marcos Andrés\POO\POO\25-04-2019\ProyectoFinalPrueba2\ProyectoFinalPrueba2\bin\Debug\ProyectoFinalPrueba2.exe.config
+C:\Users\marcosandres.blesa\Google Drive\Marcos Andrés\POO\POO\25-04-2019\ProyectoFinalPrueba2\ProyectoFinalPrueba2\bin\Debug\ProyectoFinalPrueba2.exe
+C:\Users\marcosandres.blesa\Google Drive\Marcos Andrés\POO\POO\25-04-2019\ProyectoFinalPrueba2\ProyectoFinalPrueba2\bin\Debug\ProyectoFinalPrueba2.pdb
+C:\Users\marcosandres.blesa\Google Drive\Marcos Andrés\POO\POO\25-04-2019\ProyectoFinalPrueba2\ProyectoFinalPrueba2\obj\Debug\ProyectoFinalPrueba2.csprojAssemblyReference.cache
+C:\Users\marcosandres.blesa\Google Drive\Marcos Andrés\POO\POO\25-04-2019\ProyectoFinalPrueba2\ProyectoFinalPrueba2\obj\Debug\ProyectoFinalPrueba2.csproj.CoreCompileInputs.cache
+C:\Users\marcosandres.blesa\Google Drive\Marcos Andrés\POO\POO\25-04-2019\ProyectoFinalPrueba2\ProyectoFinalPrueba2\obj\Debug\ProyectoFinalPrueba2.exe
+C:\Users\marcosandres.blesa\Google Drive\Marcos Andrés\POO\POO\25-04-2019\ProyectoFinalPrueba2\ProyectoFinalPrueba2\obj\Debug\ProyectoFinalPrueba2.pdb
