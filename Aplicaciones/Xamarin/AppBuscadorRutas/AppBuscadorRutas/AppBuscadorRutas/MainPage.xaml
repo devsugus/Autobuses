@@ -78,26 +78,7 @@
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-            <Picker
-               HorizontalOptions="CenterAndExpand">
-                <Picker.Title>
-                    <OnPlatform>
-                        <On Platform="Android" Value="Ciudad de Origen" />
-                    </OnPlatform>
-                </Picker.Title>
-                <Picker.Items>
-                    <!--Aragon-->
-                    <x:String>Huesca</x:String>
-                    <x:String>Teruel</x:String>
-                    <x:String>Zaragoza</x:String>
-                    <!--Cataluña-->
-                    <x:String>Barcelona</x:String>
-                    <x:String>Girona</x:String>
-                    <x:String>Lleida</x:String>
-                    <x:String>Tarragona</x:String>
-                </Picker.Items>
-            </Picker>
-            
+            <Picker x:Name="SeleccionCiudadOrigen" />
             <Label Text=">>>"
                    HorizontalOptions="Center"
                    VerticalOptions="Center">
@@ -108,7 +89,7 @@
                 </Label.FontFamily>
             </Label>
 
-            <!--Ciudad de Origen-->
+            <!--Ciudad de Destino-->
             <Label Text="Ciudad de Destino" 
            HorizontalOptions="CenterAndExpand">
                 <Label.FontFamily>
@@ -117,21 +98,7 @@
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-            <Picker
-               HorizontalOptions="CenterAndExpand">
-                <Picker.Items>
-                    <!--Aragon-->
-                    <x:String>Huesca</x:String>
-                    <x:String>Teruel</x:String>
-                    <x:String>Zaragoza</x:String>
-                    <!--Cataluña-->
-                    <x:String>Barcelona</x:String>
-                    <x:String>Girona</x:String>
-                    <x:String>Lleida</x:String>
-                    <x:String>Tarragona</x:String>
-                </Picker.Items>
-            </Picker>
-            
+            <Picker x:Name="SeleccionCiudadDestino" />
             <!--Botón de Búsqueda-->
             <Button Text="Buscar" 
                 HorizontalOptions="Center" 

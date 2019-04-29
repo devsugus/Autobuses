@@ -7,6 +7,6 @@ namespace AppBuscadorRutas.Services.Interfaces
 {
     interface IServicioAPI <T> where T: class
     {
-        Task<List<T>> ObtenerListaDatosAsync();
+        Task<T> ObtenerAsync();
     }
 }

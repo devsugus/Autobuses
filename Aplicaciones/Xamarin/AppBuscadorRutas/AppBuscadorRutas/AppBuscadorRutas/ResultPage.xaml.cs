@@ -17,14 +17,7 @@ namespace AppBuscadorRutas
 	{
 		public ResultPage ()
 		{
-
 			InitializeComponent ();
-            RunAsyncRutas().GetAwaiter().GetResult();
-        }
-        static async Task RunAsyncRutas()
-        {
-            IServicioAPI<Rutas> servicio = new ServicioAPI<Rutas>("....");
-            List<Rutas> ListadoDeRutas = await servicio.ObtenerListaDatosAsync();
         }
     }
 }

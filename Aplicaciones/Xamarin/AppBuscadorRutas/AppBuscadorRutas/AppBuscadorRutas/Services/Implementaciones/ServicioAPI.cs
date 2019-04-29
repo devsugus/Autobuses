@@ -9,29 +9,30 @@ using Newtonsoft.Json;
 
 namespace AppBuscadorRutas.Services.Implementaciones
 {
-    class ServicioAPI <T> : IServicioAPI<T> where T:class
+    class ServicioAPI<T> : IServicioAPI<T> where T : class
     {
         public string URL;
         public ServicioAPI(string URL)
         {
             this.URL = URL;
         }
-        public async Task<List<T>> ObtenerListaDatosAsync()
+        public async Task<T> ObtenerAsync()
         {
-            List<T> ListaDeDatos = new List<T>();
+            T TEntity;
             HttpWebRequest requestCliente = (HttpWebRequest)WebRequest.Create(this.URL);
             using (HttpWebResponse response = (HttpWebResponse)requestCliente.GetResponse())
+            using (Stream stream = response.GetResponseStream())
+            using (StreamReader reader = new StreamReader(stream))
             {
-                if(response.StatusCode == HttpStatusCode.OK)
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    StreamReader rd = new StreamReader(response.GetResponseStream());
-                    string str = rd.ReadToEnd();
-                    ListaDeDatos = JsonConvert.DeserializeObject<List<T>>(str);
-                    return ListaDeDatos;
+                    var json = await reader.ReadToEndAsync();
+                    TEntity = JsonConvert.DeserializeObject<T>(json);
+                    return TEntity;
                 }
                 else
                 {
-                    return default(List<T>);
+                    return default(T);
                 }
             }
         }

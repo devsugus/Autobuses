@@ -18,15 +18,14 @@ namespace AppBuscadorRutas
         public MainPage()
         {
             InitializeComponent();
-            RunAsyncCiudades().GetAwaiter().GetResult();
-        }
 
-        static async Task RunAsyncCiudades()
-        {
-            IServicioAPI<Ciudades> servicio = new ServicioAPI<Ciudades>("URL CIUDADES");
-            List<Ciudades> ListadoDeCiudades = await servicio.ObtenerListaDatosAsync();
+            IServicioAPI<Olimpiada> servicio = new ServicioAPI<Olimpiada>(@"http://localhost:52959/WcfDataServiceOlimpiada.svc/Paises('ESP')/Atletas?$format=json");
+            Olimpiada olimpiada = servicio.ObtenerAsync().Result;
+            List<String> Ciudades = (from _Ciudad in olimpiada.value
+                                     select _Ciudad.Nombre).ToList();
+            SeleccionCiudadOrigen.ItemsSource = Ciudades;
+            SeleccionCiudadDestino.ItemsSource = Ciudades;
         }
-
         async void Button_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new ResultPage());
