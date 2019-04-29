@@ -34,20 +34,17 @@ namespace AutobusesSese.Controllers
             }
         }
 
-            // GET: Ciudades
-            public async Task<ActionResult> Index()
+        // GET: Ciudades
+        public async Task<ActionResult> Index()
         {
-            return View(await db.Ciudades.ToListAsync());
+            var ciudades = await db.DameCiudades();
+            return View(ciudades);
         }
 
         // GET: Ciudades/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public async Task<ActionResult> Details(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ciudades ciudades = await db.Ciudades.FindAsync(id);
+            Ciudades ciudades = await db.DameCiudad(id);
             if (ciudades == null)
             {
                 return HttpNotFound();
@@ -68,27 +65,19 @@ namespace AutobusesSese.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,NombreCiudad")] Ciudades ciudades)
         {
-
             if (ModelState.IsValid)
             {
-                ciudades.NombreCiudad = ciudades.NombreCiudad.First().ToString().ToUpper() + ciudades.NombreCiudad.Substring(1).ToLower();
-                db.Ciudades.Add(ciudades);
-                await db.SaveChangesAsync();
+                db.CreaCiudad(ciudades);
                 return RedirectToAction("Index");
             }
 
             return View(ciudades);
         }
 
-
         // GET: Ciudades/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public async Task<ActionResult> Edit(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ciudades ciudades = await db.Ciudades.FindAsync(id);
+            Ciudades ciudades = await db.DameCiudad(id);
             if (ciudades == null)
             {
                 return HttpNotFound();
@@ -105,21 +94,16 @@ namespace AutobusesSese.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(ciudades).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                db.ActualizaCiudad(ciudades);
                 return RedirectToAction("Index");
             }
             return View(ciudades);
         }
 
         // GET: Ciudades/Delete/5
-        public async Task<ActionResult> Delete(int? id)
+        public async Task<ActionResult> Delete(int id)
         {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Ciudades ciudades = await db.Ciudades.FindAsync(id);
+            Ciudades ciudades = await db.DameCiudad(id);
             if (ciudades == null)
             {
                 return HttpNotFound();
@@ -132,19 +116,11 @@ namespace AutobusesSese.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            Ciudades ciudades = await db.Ciudades.FindAsync(id);
-            db.Ciudades.Remove(ciudades);
-            await db.SaveChangesAsync();
+            Ciudades ciudades = await db.DameCiudad(id);
+            db.BorraCiudad(ciudades);
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
     }
 }
+

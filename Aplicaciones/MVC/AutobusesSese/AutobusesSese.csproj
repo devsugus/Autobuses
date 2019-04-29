@@ -45,6 +45,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.9.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.9.2\lib\net45\Autofac.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -136,12 +139,30 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Ciudades.cs">
-      <DependentUpon>SeseBus.tt</DependentUpon>
+      <DependentUpon>Fake.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Fake.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Fake.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Fake.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Fake.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Fake.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Fake.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\MetadataCiudadades.cs" />
     <Compile Include="Models\MetadatasRutas.cs" />
+    <Compile Include="Models\repositorios\FakeRepositorio.cs" />
+    <Compile Include="Models\repositorios\IRepositorio.cs" />
+    <Compile Include="Models\repositorios\Repositorio.cs" />
     <Compile Include="Models\Rutas.cs">
-      <DependentUpon>SeseBus.tt</DependentUpon>
+      <DependentUpon>Fake.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\SeseBus.Context.cs">
       <AutoGen>True</AutoGen>
@@ -161,10 +182,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\AutobusesSese.mdf" />
-    <Content Include="App_Data\AutobusesSese_log.ldf">
-      <DependentUpon>AutobusesSese.mdf</DependentUpon>
-    </Content>
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -179,6 +196,16 @@
     <Content Include="img\Diseño_App_Ver_1.png" />
     <Content Include="img\Diseño_App_Ver_2.png" />
     <Content Include="img\Logo.png" />
+    <Content Include="Models\Fake.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Fake.edmx</DependentUpon>
+      <LastGenOutput>Fake.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Fake.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Fake.edmx</DependentUpon>
+      <LastGenOutput>Fake.cs</LastGenOutput>
+    </Content>
     <Content Include="Models\SeseBus.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SeseBus.edmx</DependentUpon>
@@ -201,6 +228,13 @@
     </EntityDeploy>
     <Content Include="Models\SeseBus.edmx.diagram">
       <DependentUpon>SeseBus.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Fake.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Fake.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Fake.edmx.diagram">
+      <DependentUpon>Fake.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -239,7 +273,9 @@
     <Content Include="Views\Rutas\Edit.cshtml" />
     <Content Include="Views\Rutas\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
