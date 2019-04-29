@@ -2,25 +2,96 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppBuscadorRutas.ResultPage">
+    <ContentPage.Resources>
+        <!--Estilos-->
+        <StyleSheet>
+            <![CDATA[
+            
+            #Cabecera {
+                background-color: #2c5aa0;
+                font-family: 'Raleway', sans-serif;
+            margin-left: -10;
+            
+            }
+            
+            #Titulo {
+                font-size: large;
+                color: white;
+                margin-left: 20;
+            }
+            
+            Picker {
+                width:200;
+            }
+            
+            Button {
+                border-radius:6;
+                background-color: #2c5aa0;
+                color: white;
+                font-size: medium;
+            }
+            
+            ]]>
+        </StyleSheet>
+    </ContentPage.Resources>
+
+    <!--Cabecera-->
+    <NavigationPage.TitleIcon>
+        <FileImageSource File="logo.png"></FileImageSource>
+    </NavigationPage.TitleIcon>
+
     <NavigationPage.TitleView>
-        <StackLayout Orientation="Horizontal">
-            <Image Source="logo.png" 
-                   Aspect="AspectFill"
-                   VerticalOptions="Start" 
-                   HorizontalOptions="Start"/>
-            <Label
-                Text="Resultados de rutas"
-                FontSize="Large"
-                TextColor="Black"
+        <StackLayout Orientation="Horizontal" StyleId="Cabecera">
+            <Label StyleId="Titulo"
+                Text="Resultado"
                 VerticalOptions="Center"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Center" FontSize="Medium">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="UWP" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
         </StackLayout>
     </NavigationPage.TitleView>
+    
+    <!--Contenido-->
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout>
+                <Label
+               Text="Rutas"
+               FontSize="Medium"
+               TextColor="Black"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"/>
+            </StackLayout>
+            <StackLayout>
+                <!--<BoxView
+            Color="#2c5aa0"
+            CornerRadius="20"
+            WidthRequest="360"
+            HeightRequest="360"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />-->
+            </StackLayout>
+            <ListView ItemsSource="{Binding ListViewRutas}"
+                      HasUnevenRows="True"
+                      BackgroundColor="Snow"
+                      SeparatorVisibility="None"
+                      HorizontalOptions="FillAndExpand"
+                      VerticalOptions="FillAndExpand">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout>
+                                <Label Text="{Binding Origen}"></Label>
+                                <Label Text="{Binding Precio}"></Label>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
