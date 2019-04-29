@@ -10,6 +10,7 @@
             
             #Cabecera {
                 background-color: #2c5aa0;
+                font-family: 'Raleway', sans-serif;
             }
             
             #Titulo {
@@ -29,14 +30,13 @@
                 font-size: medium;
             }
             
-            
             ]]>
         </StyleSheet>
 
         <!--Font Awesome-->
         <ResourceDictionary>
             <OnPlatform x:TypeArguments="x:String" x:Key="FontAwesomeBrands">
-                <On Platform="UWP" Value="/Assets/FontAwesome#Font Awesome 5 Free-Solid-900" />
+                <On Platform="UWP" Value="Assets/FontAwesome#Font Awesome 5 Free-Solid-900" />
             </OnPlatform>
         </ResourceDictionary>
     </ContentPage.Resources>
@@ -51,9 +51,17 @@
             <Label StyleId="Titulo"
                 Text="Autobuses Sesé"
                 VerticalOptions="Center"
-                HorizontalOptions="Center"/>
+                HorizontalOptions="Center">
+                <Label.FontFamily>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="UWP" Value="Assets/Fonts/Raleway-SemiBold.ttf#Raleway" />
+                    </OnPlatform>
+                </Label.FontFamily>
+            </Label>
         </StackLayout>
     </NavigationPage.TitleView>
+    
+    <!--Contenido-->
     <ContentPage.Content>
         <StackLayout>
             <!--Título-->
@@ -70,7 +78,7 @@
             </Label>
             
             <!--Ciudad de Origen-->
-            <Label Text="Ciudad de origen"
+            <Label Text="Ciudad de Origen"
            HorizontalOptions="CenterAndExpand">
                 <Label.FontFamily>
                     <OnPlatform x:TypeArguments="x:String">

@@ -12,10 +12,11 @@ namespace AppBuscadorRutas
     public partial class MainPage : ContentPage
     {
         ListView listView;
-        string[] names = { "Madrid","Zaragoza","Barcelona" };  
+        string[] names = { "Madrid","Zaragoza","Barcelona" };
         public MainPage()
         {
             InitializeComponent();
+            
         }
 
         async void Button_Clicked(object sender, EventArgs e)
