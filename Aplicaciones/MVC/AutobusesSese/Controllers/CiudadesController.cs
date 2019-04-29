@@ -13,9 +13,29 @@ namespace AutobusesSese.Controllers
 {
     public class CiudadesController : BaseController
     {
-       
-        // GET: Ciudades
-        public async Task<ActionResult> Index()
+        [AcceptVerbs("Get", "Post")]
+        public ActionResult VerificarCiudad(string NombreCiudad)
+        {
+            
+
+            AutobusesSeseEntities1 db = new AutobusesSeseEntities1();
+
+            var nombre = (from Nombre in db.Ciudades
+                          where Nombre.NombreCiudad == NombreCiudad
+                          select Nombre).ToList();
+
+            if (nombre.Count == 0)
+            {
+                return Json(data: true);
+            }
+            else
+            {
+                return Json(data:$"La ciudad {NombreCiudad} ya existe.");
+            }
+        }
+
+            // GET: Ciudades
+            public async Task<ActionResult> Index()
         {
             return View(await db.Ciudades.ToListAsync());
         }
@@ -48,8 +68,10 @@ namespace AutobusesSese.Controllers
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include = "Id,NombreCiudad")] Ciudades ciudades)
         {
+
             if (ModelState.IsValid)
             {
+                ciudades.NombreCiudad = ciudades.NombreCiudad.First().ToString().ToUpper() + ciudades.NombreCiudad.Substring(1).ToLower();
                 db.Ciudades.Add(ciudades);
                 await db.SaveChangesAsync();
                 return RedirectToAction("Index");
@@ -57,6 +79,7 @@ namespace AutobusesSese.Controllers
 
             return View(ciudades);
         }
+
 
         // GET: Ciudades/Edit/5
         public async Task<ActionResult> Edit(int? id)

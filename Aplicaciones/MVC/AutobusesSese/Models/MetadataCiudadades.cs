@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace AutobusesSese.Models
 {
@@ -12,7 +13,8 @@ namespace AutobusesSese.Models
     {
             public int Id { get; set; }
 
-            [MaxLength(3)]
+            [MinLength(3)]
+            [Remote("VerificarCiudad", "Ciudades", HttpMethod="Post")]
             public string NombreCiudad { get; set; }
         }
     }
