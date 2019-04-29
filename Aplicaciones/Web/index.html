@@ -1,38 +1,100 @@
-﻿<!DOCTYPE html>
-<html>
+<!DOCTYPE html>
+<html lang="es">
+
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Autobuses Sesé</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 </head>
+
 <body>
     <header id="Cabecera">
-        <img src="#" alt="Alternate Text"  id="Logo"/>
-        <h1 ></h1>
+        <img src="img/Logo.png" alt="Logo" id="Logo" />
+        <h1>Autobuses Sesé</h1>
     </header>
-    <content>
-        <div id="Buscador">
-            <form action="/" method="post">
-                <input type="type" name="name" value="" id="Origen" />
-                <input type="type" name="name" value="" id="Destino" />
-                <input type="submit" name="name" value="Buscar" id="Enviar" />
-            </form>
+    <div id="Buscador">
+        <h1>Buscador de rutas</h1>
+        <form action="#" method="post">
+            <select name="Origen" id="Origen" title="Ciudad Origen">
+                <optgroup label="Aragón">
+                    <option>Huesca</option>
+                    <option>Teruel</option>
+                    <option>Zaragoza</option>
+                </optgroup>
+                <optgroup label="Cataluña">
+                    <option>Barcelona</option>
+                    <option>Girona</option>
+                    <option>Lleida</option>
+                    <option>Tarragona</option>
+                </optgroup>
+            </select>
+            <span>>>></span>
+            <select name="Destino" id="Destino" title="Ciudad Destino">
+                <optgroup label="Aragón">
+                    <option>Huesca</option>
+                    <option>Teruel</option>
+                    <option>Zaragoza</option>
+                </optgroup>
+                <optgroup label="Cataluña">
+                    <option>Barcelona</option>
+                    <option>Girona</option>
+                    <option>Lleida</option>
+                    <option>Tarragona</option>
+                </optgroup>
+            </select>
+            <br>
+            <input type="submit" name="submit" value="Buscar" id="Enviar" />
+        </form>
+    </div>
+    <hr>
+    <div id="Resultados">
+        <article>
+            <h1>
+                <!-- Origen y destino -->
+                Resultados de la Búsqueda
+            </h1>
+            <h2>
+                Huesca - Tardienta - Zaragoza
+            </h2>
+            <ul>
+                <li class="Precio"><span>Precio:</span> 48€</li>
+                <li class="Tiempo"><span>Tiempo:</span> 2 horas</li>
+                <li class="Distancia"><span>Distancia:</span> 75 Km</li>
+                <li class="Ruta"><span>Ruta completa:</span>
+                    <ul>
+                        <li class="SbRuta">Zaragoza</li>
+                        <li class="SbRuta">Tardienta</li>
+                        <li class="SbRuta">Huesca</li>
+                    </ul>
+                </li>
+            </ul>
+        </article>
+    </div>
+    <footer>
+        <div id="Direccion">
+            <h1>Dirección</h1>
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i> Virgen del buen acuerdo 5, 50014 Zaragoza</li>
+                <li>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2980.0643718829924!2d-0.8657728850606571!3d41.67595317923874!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd596bd0d849697d%3A0x743673b7eed5e65c!2sGrupo+Ses%C3%A9.+Corporativo.!5e0!3m2!1ses!2ses!4v1556186319741!5m2!1ses!2ses"
+                        width="300" height="100" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </li>
+            </ul>
         </div>
-        <div id="Resultados">
-            <article>
-                <h1><!-- Origen y destino --></h1>
-                <ul>
-                    <li class="Precio"></li>
-                    <li class="Tiempo"></li>
-                    <li class="Distancia"></>
-                    <li class="Ruta">
-                        <ul>
-                            <li class="SbRuta"></li>
-                        </ul>
-                    </li>
-                </ul>
-            </article>
+
+        <div id="Contacto">
+            <h1>Contacto</h1>
+            <ul>
+                <li id="Telefono"><i class="fas fa-phone"></i> 976 45 58 00</li>
+                <li id="Facebook"><i class="fab fa-facebook-f"></i> Autobuses Sesé</li>
+                <li id="Twitter"><i class="fab fa-twitter"></i> Autobuses Sesé</li>
+                <li id="Instagram"><i class="fab fa-instagram"></i> Autobuses Sesé</li>
+            </ul>
         </div>
-    </content>
-    <footer></footer>
+    </footer>
 </body>
+
 </html>

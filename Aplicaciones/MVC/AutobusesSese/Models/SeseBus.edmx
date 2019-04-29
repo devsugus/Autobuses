@@ -79,9 +79,9 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Origen" Type="Int32" Nullable="false" />
           <Property Name="Destino" Type="Int32" Nullable="false" />
-          <Property Name="Km" Type="Int32" Nullable="false" />
+          <Property Name="Km" Type="Double" Nullable="false" />
           <Property Name="Tiempo" Type="Time" Nullable="false" Precision="3" />
-          <Property Name="Precio" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <NavigationProperty Name="Ciudades" Relationship="Self.FK_Rutas_Ciudades" FromRole="Rutas" ToRole="Ciudades" />
           <NavigationProperty Name="Ciudades1" Relationship="Self.FK_Rutas_Ciudades1" FromRole="Rutas" ToRole="Ciudades" />
         </EntityType>
@@ -109,7 +109,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="AutobusesSeseEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="AutobusesSeseEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Ciudades" EntityType="Self.Ciudades" />
           <EntitySet Name="Rutas" EntityType="Self.Rutas" />
           <AssociationSet Name="FK_Rutas_Ciudades" Association="Self.FK_Rutas_Ciudades">
@@ -126,7 +126,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="AutobusesSeseModelStoreContainer" CdmEntityContainer="AutobusesSeseEntities">
+        <EntityContainerMapping StorageEntityContainer="AutobusesSeseModelStoreContainer" CdmEntityContainer="AutobusesSeseEntities1">
           <EntitySetMapping Name="Ciudades">
             <EntityTypeMapping TypeName="AutobusesSeseModel.Ciudades">
               <MappingFragment StoreEntitySet="Ciudades">

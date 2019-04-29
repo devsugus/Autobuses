@@ -9,7 +9,7 @@ namespace AutobusesSese.Controllers
 {
     public class BaseController : Controller
     {
-        private AutobusesSeseEntities db = new AutobusesSeseEntities();
+        protected AutobusesSeseEntities1 db = new AutobusesSeseEntities1();
 
         protected override void OnException(ExceptionContext filterContext)
         {
