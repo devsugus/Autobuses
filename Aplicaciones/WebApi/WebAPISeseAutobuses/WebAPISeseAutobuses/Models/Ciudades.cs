@@ -9,6 +9,7 @@
 
 namespace WebAPISeseAutobuses.Models
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
@@ -23,9 +24,11 @@ namespace WebAPISeseAutobuses.Models
     
         public int Id { get; set; }
         public string NombreCiudad { get; set; }
-    
+        
+        [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rutas> Rutas { get; set; }
+        [JsonIgnore]
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Rutas> Rutas1 { get; set; }
     }
