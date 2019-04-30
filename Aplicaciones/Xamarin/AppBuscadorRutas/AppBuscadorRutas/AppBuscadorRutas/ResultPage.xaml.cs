@@ -18,9 +18,10 @@ namespace AppBuscadorRutas
 		public ResultPage (string CiudadOrigen, string CiudadDestino)
 		{
 			InitializeComponent ();
+            //IServicioAPIRest<Ciudades> servicio = new ServicioAPIRest<Ciudades>(@"https://webapiseseautobuses.azurewebsites.net/api/Ciu");
             ResultadoRutas.ItemsSource = new List<string>()
             {
-                
+                CiudadOrigen, CiudadDestino, 
             };
             
         }

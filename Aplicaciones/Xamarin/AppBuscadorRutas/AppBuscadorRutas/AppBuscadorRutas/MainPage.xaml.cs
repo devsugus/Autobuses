@@ -19,12 +19,12 @@ namespace AppBuscadorRutas
         {
             InitializeComponent();
 
-            IServicioAPI<Olimpiada> servicio = new ServicioAPI<Olimpiada>(@"http://localhost:52959/WcfDataServiceOlimpiada.svc/Paises('ESP')/Atletas?$format=json");
-            Olimpiada olimpiada = servicio.Obtener();
-            List<String> Ciudades = (from _Ciudad in olimpiada.value
-                                     select _Ciudad.Nombre).ToList();
-            PickerCiudadOrigen.ItemsSource = Ciudades;
-            PickerCiudadDestino.ItemsSource = Ciudades;
+            IServicioAPIRest<Ciudades> servicio = new ServicioAPIRest<Ciudades>(@"https://webapiseseautobuses.azurewebsites.net/api/CiudadesAPI");
+            List<Ciudades> ListaCiudades = servicio.Obtener();
+            List<String> NombreCiudades = (from Ciudades in ListaCiudades
+                                     select Ciudades.NombreCiudad).ToList();
+            PickerCiudadOrigen.ItemsSource = NombreCiudades;
+            PickerCiudadDestino.ItemsSource = NombreCiudades;
         }
         async void Button_Clicked(object sender, EventArgs e)
         {

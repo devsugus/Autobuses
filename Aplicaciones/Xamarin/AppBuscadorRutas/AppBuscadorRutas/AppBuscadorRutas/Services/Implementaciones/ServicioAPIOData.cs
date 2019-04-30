@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.IO;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using AppBuscadorRutas.Services.Interfaces;
 using Newtonsoft.Json;
 
 namespace AppBuscadorRutas.Services.Implementaciones
 {
-    class ServicioAPI<T> : IServicioAPI<T> where T : class
+    class ServicioAPIOData<T> : IServicioAPIOData<T> where T : class
     {
         public string URL;
-        public ServicioAPI(string URL)
+        public ServicioAPIOData(string URL)
         {
             this.URL = URL;
         }
