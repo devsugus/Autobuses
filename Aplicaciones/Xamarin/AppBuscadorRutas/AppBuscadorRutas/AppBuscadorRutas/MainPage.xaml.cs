@@ -20,7 +20,7 @@ namespace AppBuscadorRutas
             InitializeComponent();
 
             IServicioAPI<Olimpiada> servicio = new ServicioAPI<Olimpiada>(@"http://localhost:52959/WcfDataServiceOlimpiada.svc/Paises('ESP')/Atletas?$format=json");
-            Olimpiada olimpiada = servicio.ObtenerAsync().Result;
+            Olimpiada olimpiada = servicio.Obtener();
             List<String> Ciudades = (from _Ciudad in olimpiada.value
                                      select _Ciudad.Nombre).ToList();
             SeleccionCiudadOrigen.ItemsSource = Ciudades;

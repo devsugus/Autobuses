@@ -16,7 +16,7 @@ namespace AppBuscadorRutas.Services.Implementaciones
         {
             this.URL = URL;
         }
-        public async Task<T> ObtenerAsync()
+        public T Obtener()
         {
             T TEntity;
             HttpWebRequest requestCliente = (HttpWebRequest)WebRequest.Create(this.URL);
@@ -26,7 +26,7 @@ namespace AppBuscadorRutas.Services.Implementaciones
             {
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    var json = await reader.ReadToEndAsync();
+                    var json = reader.ReadToEnd();
                     TEntity = JsonConvert.DeserializeObject<T>(json);
                     return TEntity;
                 }
