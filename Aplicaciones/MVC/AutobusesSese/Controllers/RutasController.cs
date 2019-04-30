@@ -32,12 +32,15 @@ namespace AutobusesSese.Controllers
         }
 
         // GET: Rutas/Create
-        public ActionResult Create()
+        public async Task<ActionResult> Create()
         {
-            ViewBag.Origen = db.DameCiudades();
-            ViewBag.Destino = db.DameCiudades();
-            //ViewBag.Origen = new SelectList(db.DameCiudades(), "Id", "NombreCiudad");
-            //ViewBag.Destino = new SelectList(db.DameCiudades(), "Id", "NombreCiudad");
+            var origen = await db.DameCiudades();
+            ViewBag.Origen = new SelectList(origen,"id","NombreCiudad");
+
+            var destino = await db.DameCiudades();
+            ViewBag.Destino = new SelectList(destino, "id", "NombreCiudad");
+
+            
             return View();
         }
 
@@ -53,8 +56,11 @@ namespace AutobusesSese.Controllers
                 db.CreaRuta(rutas);
                 return RedirectToAction("Index");
             }
-            ViewBag.Origen = await db.DameCiudades();
-            ViewBag.Destino = await db.DameCiudades();
+            var origen = await db.DameCiudades();
+            ViewBag.Origen = new SelectList(origen, "id", "NombreCiudad");
+
+            var destino = await db.DameCiudades();
+            ViewBag.Destino = new SelectList(destino, "id", "NombreCiudad");
 
             return View(rutas);
         }
@@ -67,8 +73,11 @@ namespace AutobusesSese.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Origen = await db.DameCiudades();
-            ViewBag.Destino = await db.DameCiudades();
+            var origen = await db.DameCiudades();
+            ViewBag.Origen = new SelectList(origen, "id", "NombreCiudad");
+
+            var destino = await db.DameCiudades();
+            ViewBag.Destino = new SelectList(destino, "id", "NombreCiudad");
             return View(rutas);
         }
 

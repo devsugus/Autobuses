@@ -28,23 +28,23 @@ namespace AutobusesSese.Controllers
 
         }
 
-        protected override void OnException(ExceptionContext filterContext)
-        {
-            filterContext.ExceptionHandled = true;
+        //protected override void OnException(ExceptionContext filterContext)
+        //{
+        //    filterContext.ExceptionHandled = true;
 
-            //Log the error!!
-            //_Logger.Error(filterContext.Exception);
+        //    //Log the error!!
+        //    //_Logger.Error(filterContext.Exception);
 
-            //Redirect or return a view, but not both.
-            //filterContext.Result = RedirectToAction("Index", "ErrorHandler");
-            // OR 
+        //    //Redirect or return a view, but not both.
+        //    //filterContext.Result = RedirectToAction("Index", "ErrorHandler");
+        //    // OR 
             
 
-        filterContext.Result = new ViewResult
-            {
-                ViewName = "~/Views/Shared/Error.cshtml"
-            };
-        }
+        //filterContext.Result = new ViewResult
+        //    {
+        //        ViewName = "~/Views/Shared/Error.cshtml"
+        //    };
+        //}
      
     }
 }

@@ -18,8 +18,8 @@ namespace AutobusesSese.Models
         [DataType(DataType.Text)]
         public int Destino { get; set; }
 
-        [MaxLength(3)]
-        public int Km { get; set; }
+        [DisplayFormat(DataFormatString = "{0:0.00}", ApplyFormatInEditMode = true)]
+        public double Km { get; set; }
 
         public System.TimeSpan Tiempo { get; set; }
 
