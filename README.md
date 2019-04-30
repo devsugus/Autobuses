@@ -16,7 +16,7 @@ Proyecto final curso
 	- [ ] Implementación
 - [ ] XAMARIN (esqueleto)
 	- [ ] Implementación
-- [ ] Estilos
+- [x] Estilos
 
 
 # Hecho
