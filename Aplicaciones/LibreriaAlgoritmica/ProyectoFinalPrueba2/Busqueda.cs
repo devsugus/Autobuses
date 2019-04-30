@@ -37,10 +37,10 @@ namespace ProyectoFinalPrueba2
             rutas.Add(devuelveRutaPrecio(ciudadOrigen, ciudadDestino, sql1));
             rutas.Add(devuelveRutaTiempo(ciudadOrigen, ciudadDestino, sql2));
 
-            foreach (var item in rutas) {
+            /*foreach (var item in rutas) {
                 Console.WriteLine(item.CiudadOrigen + " -- " + item.CiudadDestino + " -- " + item.Camino + " -- " + item.IdValor + " -- " + item.Valor);
             }
-            Console.ReadLine();
+            Console.ReadLine();*/
 
             return rutas;
         }

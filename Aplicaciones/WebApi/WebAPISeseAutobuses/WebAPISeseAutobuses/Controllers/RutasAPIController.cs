@@ -18,9 +18,17 @@ namespace WebAPISeseAutobuses.Controllers
         private AutobusesSeseEntities db = new AutobusesSeseEntities();
 
         // GET: api/RutasAPI
-        public IQueryable<Rutas> GetRutas()
+        public List<Ruta> GetRutas(string id, string id2)
         {
-            return db.Rutas;
+            //return db.Rutas;
+            ConexionBBDD cnn = new ConexionBBDD("desaprendiendodb.database.windows.net", "AlumnoSese", "P@$$w0rd!", "AutobusesSese");
+            Busqueda bss = new Busqueda(cnn);
+            /*
+            * Introduce ciudad de origen y ciudad de destino para poder devolver el listado de rutas.
+            */
+            var cosa = bss.rutas(id, id2);
+           
+            return cosa;
         }
 
         // GET: api/RutasAPI/5

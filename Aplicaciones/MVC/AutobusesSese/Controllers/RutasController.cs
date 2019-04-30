@@ -13,6 +13,8 @@ namespace AutobusesSese.Controllers
 {
     public class RutasController : BaseController
     {
+
+       
         // GET: Rutas
         public async Task<ActionResult> Index()
         {
