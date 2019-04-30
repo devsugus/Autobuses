@@ -17,7 +17,7 @@ namespace AutobusesSese.Controllers
         public BaseController()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<FakeRepositorio>().As<IRepositorio>();
+            builder.RegisterType<Repositorio>().As<IRepositorio>();
             Container = builder.Build();
 
             using (var ambito = Container.BeginLifetimeScope())
