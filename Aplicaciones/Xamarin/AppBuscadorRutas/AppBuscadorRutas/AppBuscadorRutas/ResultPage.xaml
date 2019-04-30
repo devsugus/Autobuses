@@ -67,13 +67,8 @@
                HorizontalOptions="Center"/>
             </StackLayout>
             <StackLayout>
-                <!--<BoxView
-            Color="#2c5aa0"
-            CornerRadius="20"
-            WidthRequest="360"
-            HeightRequest="360"
-            VerticalOptions="Center"
-            HorizontalOptions="Center" />-->
+                <ListView x:Name="ResultadoRutas" >
+                </ListView>
             </StackLayout>
            
         </StackLayout>

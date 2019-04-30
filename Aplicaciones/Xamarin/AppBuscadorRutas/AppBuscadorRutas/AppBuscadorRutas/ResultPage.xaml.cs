@@ -15,9 +15,14 @@ namespace AppBuscadorRutas
 {
 	public partial class ResultPage : ContentPage
 	{
-		public ResultPage ()
+		public ResultPage (string CiudadOrigen, string CiudadDestino)
 		{
 			InitializeComponent ();
+            ResultadoRutas.ItemsSource = new List<string>()
+            {
+                
+            };
+            
         }
     }
 }

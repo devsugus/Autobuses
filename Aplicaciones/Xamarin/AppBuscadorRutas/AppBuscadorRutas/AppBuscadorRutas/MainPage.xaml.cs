@@ -23,12 +23,14 @@ namespace AppBuscadorRutas
             Olimpiada olimpiada = servicio.Obtener();
             List<String> Ciudades = (from _Ciudad in olimpiada.value
                                      select _Ciudad.Nombre).ToList();
-            SeleccionCiudadOrigen.ItemsSource = Ciudades;
-            SeleccionCiudadDestino.ItemsSource = Ciudades;
+            PickerCiudadOrigen.ItemsSource = Ciudades;
+            PickerCiudadDestino.ItemsSource = Ciudades;
         }
         async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new ResultPage());
+            string CiudadOrigen = PickerCiudadOrigen.SelectedItem.ToString();
+            string CiudadDestino = PickerCiudadDestino.SelectedItem.ToString();
+            await Navigation.PushAsync(new ResultPage(CiudadOrigen, CiudadDestino));
         }
     }
 }

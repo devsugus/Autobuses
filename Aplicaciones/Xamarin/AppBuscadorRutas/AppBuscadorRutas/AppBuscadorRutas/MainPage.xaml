@@ -81,7 +81,7 @@
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-            <Picker x:Name="SeleccionCiudadOrigen"
+            <Picker x:Name="PickerCiudadOrigen"
                     HorizontalOptions="CenterAndExpand"/>
             <Label Text=">>>"
                    HorizontalOptions="Center"
@@ -102,7 +102,7 @@
                     </OnPlatform>
                 </Label.FontFamily>
             </Label>
-            <Picker x:Name="SeleccionCiudadDestino"
+            <Picker x:Name="PickerCiudadDestino"
                     HorizontalOptions="CenterAndExpand"/>
             <!--Botón de Búsqueda-->
             <Button Text="Buscar" 
