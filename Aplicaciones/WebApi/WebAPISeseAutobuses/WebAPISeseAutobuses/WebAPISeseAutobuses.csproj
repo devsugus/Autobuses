@@ -169,9 +169,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Busqueda.cs" />
     <Compile Include="Models\Ciudades.cs">
       <DependentUpon>SeseAutobuses.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ConexionBBDD.cs" />
+    <Compile Include="Models\Lanzador.cs" />
+    <Compile Include="Models\Ruta.cs" />
     <Compile Include="Models\Rutas.cs">
       <DependentUpon>SeseAutobuses.tt</DependentUpon>
     </Compile>
