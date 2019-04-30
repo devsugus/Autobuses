@@ -12,7 +12,7 @@ namespace BibliotecaWebAPI
     {
         public List<Ciudades> DameCiudades()
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@"http://localhost:55002/api/Ciudades");
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@"http://localhost:42549/api/Ciudades");
             using (HttpWebResponse respuesta = (HttpWebResponse)request.GetResponse())
             using (Stream stream = respuesta.GetResponseStream())
             using (StreamReader reader = new StreamReader(stream))
@@ -24,7 +24,7 @@ namespace BibliotecaWebAPI
 
         public List<Ruta> DameRutas(int ciudadOrigen, int ciudadDestino)
         {
-            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@"http://localhost:55002/api/Ruta/" + ciudadOrigen + "/" + ciudadDestino);
+            HttpWebRequest request = (HttpWebRequest)WebRequest.Create(@"http://localhost:42549/api/Ruta/" + ciudadOrigen + "/" + ciudadDestino);
             using (HttpWebResponse respuesta = (HttpWebResponse)request.GetResponse())
             using (Stream stream = respuesta.GetResponseStream())
             using (StreamReader reader = new StreamReader(stream))
